@@ -5,16 +5,15 @@ import { getFirestore } from 'firebase/firestore';
 // import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
-// TODO: Add your web app's Firebase configuration
-// You can find this in your Firebase project console
+// TODO: Replace with YOUR Firebase configuration from Firebase Console
+// Go to Project Settings -> Your apps -> Web app -> Config
 const firebaseConfig = {
-  apiKey: "AIzaSyBr4nyvYq-i5CYWzD-defnRAhSzAZlBtrs",
-  authDomain: "sakhi-5f142.firebaseapp.com",
-  projectId: "sakhi-5f142",
-  storageBucket: "sakhi-5f142.firebasestorage.app",
-  messagingSenderId: "841614303629",
-  appId: "1:841614303629:web:daf525988fa688b27addc4",
-  measurementId: "G-8LJKEJCVHY"
+  apiKey: "AIzaSyBdm73Gdj1PfupEs34JHriSSesmEo5Nlic",
+  authDomain: "sakhi-app-eb52d.firebaseapp.com",
+  projectId: "sakhi-app-eb52d",
+  storageBucket: "sakhi-app-eb52d.firebasestorage.app",
+  messagingSenderId: "538237236810",
+  appId: "1:538237236810:web:47523fad57f0fe0d4218b3"
 };
 
 // Initialize Firebase
