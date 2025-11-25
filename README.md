@@ -111,7 +111,7 @@ To create a accessible, free, and reliable safety platform that helps women feel
 
 ```bash
 # Clone the repository
-git clone https://github.com/alphabet28/sakhi.git
+git clone https://github.com/Nakshatra1610/sakhi.git
 cd sakhi
 
 # Install dependencies
@@ -273,8 +273,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/alphabet28/sakhi/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/alphabet28/sakhi/discussions)
+- **Issues**: [GitHub Issues](https://github.com/Nakshatra1610/sakhi/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Nakshatra1610/sakhi/discussions)
 - **Email**: support@sakhi.app (if available)
 
 ---
