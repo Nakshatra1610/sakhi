@@ -1,0 +1,147 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function to check if user owns the document
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Trusted Contacts Collection
+    match /trustedContacts/{contactId} {
+      // Users can read their own contacts
+      allow read: if isAuthenticated() && 
+                     resource.data.userId == request.auth.uid;
+      
+      // Users can create contacts for themselves
+      allow create: if isAuthenticated() && 
+                       request.resource.data.userId == request.auth.uid;
+      
+      // Users can update their own contacts
+      allow update: if isAuthenticated() && 
+                       resource.data.userId == request.auth.uid;
+      
+      // Users can delete their own contacts
+      allow delete: if isAuthenticated() && 
+                       resource.data.userId == request.auth.uid;
+    }
+    
+    // Location Shares Collection
+    match /locationShares/{shareId} {
+      // Users can read their own location shares
+      allow read: if isAuthenticated() && 
+                     resource.data.userId == request.auth.uid;
+      
+      // Users can create location shares for themselves
+      allow create: if isAuthenticated() && 
+                       request.resource.data.userId == request.auth.uid;
+      
+      // Users can update their own location shares
+      allow update: if isAuthenticated() && 
+                       resource.data.userId == request.auth.uid;
+      
+      // Users can delete their own location shares
+      allow delete: if isAuthenticated() && 
+                       resource.data.userId == request.auth.uid;
+    }
+    
+    // Location Updates Collection
+    match /locationUpdates/{updateId} {
+      // Users can read their own location updates
+      allow read: if isAuthenticated();
+      
+      // Users can create location updates
+      allow create: if isAuthenticated();
+    }
+    
+    // Share History Collection
+    match /shareHistory/{historyId} {
+      // Users can read their own share history
+      allow read: if isAuthenticated() && 
+                     resource.data.userId == request.auth.uid;
+      
+      // Users can create share history
+      allow create: if isAuthenticated() && 
+                       request.resource.data.userId == request.auth.uid;
+    }
+    
+    // Safety Checks Collection
+    match /safetyChecks/{checkId} {
+      // Users can read their own safety checks
+      allow read: if isAuthenticated() && 
+                     resource.data.userId == request.auth.uid;
+      
+      // Users can create safety checks for themselves
+      allow create: if isAuthenticated() && 
+                       request.resource.data.userId == request.auth.uid;
+      
+      // Users can update their own safety checks
+      allow update: if isAuthenticated() && 
+                       resource.data.userId == request.auth.uid;
+      
+      // Users can delete their own safety checks
+      allow delete: if isAuthenticated() && 
+                       resource.data.userId == request.auth.uid;
+    }
+    
+    // Check-In History Collection
+    match /checkInHistory/{historyId} {
+      // Users can read their own check-in history
+      allow read: if isAuthenticated() && 
+                     resource.data.userId == request.auth.uid;
+      
+      // Users can create check-in history
+      allow create: if isAuthenticated() && 
+                       request.resource.data.userId == request.auth.uid;
+    }
+    
+    // SOS Alerts Collection (for future use)
+    match /sosAlerts/{alertId} {
+      // Users can read their own SOS alerts
+      allow read: if isAuthenticated() && 
+                     resource.data.userId == request.auth.uid;
+      
+      // Users can create SOS alerts for themselves
+      allow create: if isAuthenticated() && 
+                       request.resource.data.userId == request.auth.uid;
+      
+      // Users can update their own SOS alerts
+      allow update: if isAuthenticated() && 
+                       resource.data.userId == request.auth.uid;
+      
+      // Users can delete their own SOS alerts
+      allow delete: if isAuthenticated() && 
+                       resource.data.userId == request.auth.uid;
+    }
+    
+    // SOS Updates Collection
+    match /sosUpdates/{updateId} {
+      // Users can read SOS updates
+      allow read: if isAuthenticated();
+      
+      // Users can create SOS updates
+      allow create: if isAuthenticated();
+    }
+    
+    // SOS Evidence Collection
+    match /sosEvidence/{evidenceId} {
+      // Users can read their own SOS evidence
+      allow read: if isAuthenticated();
+      
+      // Users can create SOS evidence
+      allow create: if isAuthenticated();
+    }
+    
+    // User Profiles Collection (for future use)
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow write: if isOwner(userId);
+    }
+  }
+}

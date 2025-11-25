@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Sakhi Safety App Color System */
+    --background: 222 47% 11%;
+    --foreground: 214 20% 96%;
+
+    --card: 215 25% 17%;
+    --card-foreground: 214 20% 96%;
+
+    --popover: 215 25% 17%;
+    --popover-foreground: 214 20% 96%;
+
+    --primary: 275 67% 39%;
+    --primary-foreground: 214 20% 96%;
+
+    --secondary: 215 19% 28%;
+    --secondary-foreground: 214 20% 96%;
+
+    --muted: 215 19% 28%;
+    --muted-foreground: 215 14% 65%;
+
+    --accent: 328 78% 42%;
+    --accent-foreground: 214 20% 96%;
+
+    --destructive: 328 78% 42%;
+    --destructive-foreground: 214 20% 96%;
+
+    --success: 166 84% 40%;
+    --success-foreground: 214 20% 96%;
+
+    --warning: 253 87% 65%;
+    --warning-foreground: 214 20% 96%;
+
+    --border: 215 19% 28%;
+    --input: 215 19% 28%;
+    --ring: 275 67% 39%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(275, 67%, 39%), hsl(328, 78%, 42%));
+    --gradient-secondary: linear-gradient(135deg, hsl(215, 25%, 17%), hsl(215, 19%, 28%));
+    --gradient-hero: linear-gradient(135deg, hsl(222, 47%, 11%), hsl(275, 67%, 39%) 50%, hsl(328, 78%, 42%));
+
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(275, 67%, 39%, 0.3);
+    --shadow-card: 0 4px 20px hsl(222, 47%, 8%, 0.5);
+    --shadow-elegant: 0 10px 40px hsl(275, 67%, 39%, 0.15);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .dark {
+    /* Dark mode inherits the same values - app is primarily dark themed */
+    --background: 222 47% 11%;
+    --foreground: 214 20% 96%;
+    --card: 215 25% 17%;
+    --card-foreground: 214 20% 96%;
+    --popover: 215 25% 17%;
+    --popover-foreground: 214 20% 96%;
+    --primary: 275 67% 39%;
+    --primary-foreground: 214 20% 96%;
+    --secondary: 215 19% 28%;
+    --secondary-foreground: 214 20% 96%;
+    --muted: 215 19% 28%;
+    --muted-foreground: 215 14% 65%;
+    --accent: 328 78% 42%;
+    --accent-foreground: 214 20% 96%;
+    --destructive: 328 78% 42%;
+    --destructive-foreground: 214 20% 96%;
+    --success: 166 84% 40%;
+    --success-foreground: 214 20% 96%;
+    --warning: 253 87% 65%;
+    --warning-foreground: 214 20% 96%;
+    --border: 215 19% 28%;
+    --input: 215 19% 28%;
+    --ring: 275 67% 39%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
