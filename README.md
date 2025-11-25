@@ -46,6 +46,8 @@ To create a accessible, free, and reliable safety platform that helps women feel
 - **One-Click Directions** - Navigate to any safe place instantly
 - **Guest Access** - No login required to view safe places
 
+> **⚠️ Note:** The map currently does not display publicly available safe places data due to API integration issues. This will be fixed shortly. Users can still add and view their personal safe places.
+
 ### 👥 Trusted Contacts
 - **Emergency Contacts Management** - Add family, friends, and trusted individuals
 - **Automatic Notifications** - Alert contacts during emergencies
