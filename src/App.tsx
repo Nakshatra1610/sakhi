@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { SessionProvider } from "@/contexts/SessionContext";
 import ProtectedRoute from "@/components/ProtectedRoute";
-// TODO: Re-enable when Google Maps API is integrated
+// Note: SystemPlacesInitializer disabled - using OpenStreetMap instead of Google Maps
 // import SystemPlacesInitializer from "@/components/SystemPlacesInitializer";
 import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
@@ -29,7 +29,7 @@ const App = () => (
         <Sonner />
         <AuthProvider>
           <SessionProvider>
-            {/* TODO: Commented out until Google Maps API integration - will show real places instead of fallback ones */}
+            {/* SystemPlacesInitializer disabled - using OpenStreetMap for real-time data */}
             {/* <SystemPlacesInitializer> */}
               <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
                 <Routes>

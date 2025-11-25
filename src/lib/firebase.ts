@@ -1,12 +1,9 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
-// import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics } from 'firebase/analytics';
 
-// TODO: Replace with YOUR Firebase configuration from Firebase Console
-// Go to Project Settings -> Your apps -> Web app -> Config
+// Firebase Configuration - Replace with your own Firebase project credentials
 const firebaseConfig = {
   apiKey: "AIzaSyBdm73Gdj1PfupEs34JHriSSesmEo5Nlic",
   authDomain: "sakhi-app-eb52d.firebaseapp.com",
